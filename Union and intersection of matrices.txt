@@ -1,0 +1,33 @@
+m1,m2,l1,l2=[],[],[],[]
+r,c=int(input()),int(input())
+for i in range(r):
+  m1.append(list(map(innt,input().split())))
+  print(m1[i])
+for i in range(r):
+  m2.append(list(map(innt,input().split())))
+  print(m2[i])
+for i in range(r):
+  for j in range(c):
+    l1.append(m1[i][j])
+    l2.append(m2[i][j])
+x=input()
+if x=="|":
+  print(l1+l2)
+elif x=="&":
+  print([i for i in l1 if i in l2])
+elif x=="-":
+  op=input()
+  if op=="a-b":
+    print([i for i in l1 if i not in l2])
+  elif op=="b-a":
+    print([i for i in l2 if i not in l1])
+  else:
+    print("Give only a-b or b-q as input")
+elif x=="^":
+  for i in l1:
+    for j in l2:
+	if i not in l2:
+           print(i,end="")
+      	if j not in l1:
+           print(i,end="")
+        
